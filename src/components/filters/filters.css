@@ -1,0 +1,75 @@
+.filters {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.filter {
+    width: 8vw;
+    height: 3vw;
+    border-radius: 2rem;
+    margin: 0 0.4rem;
+    border: none;
+    font-weight: 600;
+    background: rgb(233, 233, 233);
+    cursor: pointer;
+}
+
+.filter:hover {
+    background: rgb(201, 201, 201);
+}
+
+.filter-sort {
+    width: 8vw;
+    height: 3vw;
+    border-radius: 2rem;
+    margin: 0 0.4rem;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+}
+
+.filter-sort:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .filter-type {
+        display: none;
+    }
+
+    .filter-price {
+        display: none;
+    }
+
+    .filter-review {
+        display: none;
+    }
+
+    .filter-color {
+        display: none;
+    }
+
+    .filter-material {
+        display: none;
+    }
+
+    .filter-other {
+        display: none;
+    }
+
+    .filter {
+        width: 10rem;
+        height: 3rem;
+    }
+
+    .filter-sort{
+        width: 10rem;
+        height: 3rem;
+    }
+    
+}

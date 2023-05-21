@@ -1,0 +1,91 @@
+.shop {
+    width: 90%;
+    margin: auto;
+}
+
+.shop h2 {
+    margin: 1.5rem 0;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.shop-card {
+    padding: 1rem;
+}
+
+.shop-card button {
+    width: 50%;
+    height: 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.shop-card button:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.shop-image {
+    background: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-image img{
+    max-width: 200px;
+}
+
+.shop-product-title{
+    display: flex;
+    padding: 0.2rem 0;
+    gap: 1rem;
+}
+
+.shop-product-desc {
+    font-size: 14px;
+    margin: 0.3rem 0;
+}
+
+.shop-product-rating {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0;
+    color: rgb(0, 160, 0);
+}
+
+.shop-product-rating p{
+    margin-left: 0.5rem;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .shop-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+@media only screen and (max-width: 800px) {
+
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+
+    .shop-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
