@@ -1,16 +1,23 @@
 import './App.css';
-import Navigation from './components/navigation/Navigation.jsx'
-import Header from './components/header/Header.jsx'
-import Filters from './components/filters/Filters.jsx'
-import Shop from './components/shop/Shop.jsx'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from "../src/pages/Home.jsx"
+import Product from "../src/pages/Product.jsx"
 
 function App() {
   return (
     <div className="App">
-      <Navigation/>
-      <Header/>
-      <Filters/>
-      <Shop/>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home/>} />
+          <Route path='/home' element={<Home/>} />
+          <Route path='/product' element={<Product/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
