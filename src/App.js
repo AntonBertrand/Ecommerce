@@ -6,7 +6,7 @@ import {
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from "../src/pages/Home.jsx"
-import Product from "../src/pages/Product.jsx"
+import ProductPage from "./pages/ProductPage.jsx"
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route index element={<Home/>} />
           <Route path='/home' element={<Home/>} />
-          <Route path='/product' element={<Product/>} />
+          <Route path='/product' element={<ProductPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
