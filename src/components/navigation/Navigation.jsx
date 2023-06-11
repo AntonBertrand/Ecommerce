@@ -24,7 +24,7 @@ const Navigation = () => {
         </div>
 
         <div className="nav-bot">
-            <h1 className='nav-bot-logo'>ShopCart</h1>
+            <h1 className='nav-bot-logo'><a href="/">ShopCart</a></h1>
             <a href="" className='nav-bot-categories'>Categories</a>
             <a href="" className='nav-bot-deals'>Deals</a>
             <form action="">

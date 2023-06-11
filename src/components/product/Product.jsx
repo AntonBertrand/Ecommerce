@@ -56,9 +56,9 @@ const Product = () => {
         
         <div className="product-quantity">
           <div className="product-quantity-button">
-            <button onClick={quantityDecrease}>-</button>
+            <button onClick={quantityDecrease} disabled={quantity == 0} >-</button>
             <b>{quantity}</b>
-            <button onClick={quantityIncrease}>+</button>
+            <button onClick={quantityIncrease} disabled={quantity == 10} >+</button>
           </div>
           <p>Only <span className='highlight'>12 items left!</span> Don't miss it</p>
         </div>
