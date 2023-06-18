@@ -1,4 +1,4 @@
-import {Schema, model} from 'mongoose';
+import {mongoose, Schema} from "mongoose";
 
 const ProductsSchema = new Schema({
     title: {
