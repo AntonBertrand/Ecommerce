@@ -17,6 +17,9 @@ const ProductsSchema = new Schema({
         type: Number,
         required: true
     }
+}, {
+        collection: 'products',
+        timestamps: true
 });
 
 export default mongoose.model("Products", ProductsSchema);
