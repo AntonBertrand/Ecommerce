@@ -9,13 +9,33 @@ const ProductsSchema = new Schema({
         type: String,
         required: true
     },
+    features: {
+        type: String,
+        required: true
+    },
     image: {
+        type: String,
+        required: false
+    },
+    image2: {
+        type: String,
+        required: false
+    },
+    image3: {
+        type: String,
+        required: false
+    },
+    image4: {
         type: String,
         required: false
     },
     price: {
         type: Number,
         required: true
+    },
+    rating: {
+        type: Number,
+        required: false
     }
 }, {
         collection: 'products',
