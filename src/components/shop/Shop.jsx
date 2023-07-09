@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import './shop.css'
 import {AiFillStar} from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom';
 
 const Shop = () => {
 
+    const navigate = useNavigate();
     const [products, setProducts] = useState();
 
     useEffect(() => {
@@ -26,6 +28,11 @@ const Shop = () => {
 
     }, []);
 
+    const navProduct = (id) => {
+        navigate(`/product/${id}`)
+    }
+
+
   return (
 
     <div className='shop'>
@@ -34,7 +41,7 @@ const Shop = () => {
 
         { products && products.map((product, i) => {
            
-                return (<div className="shop-card" key={i}>
+                return (<div className="shop-card" key={i} onClick={() => { navProduct(product._id) }}>
                     <div className="shop-image">
                         <img src={product.image} alt="" />
                     </div>

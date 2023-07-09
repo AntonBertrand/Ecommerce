@@ -30,23 +30,26 @@
     background: var(--primary-color);
     color: white;
 }
-
 .shop-image {
     background: rgb(240, 240, 240);
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 200px;
 }
 
 .shop-image img{
     max-height: 200px;
-    max-width: 200px;
+    max-width: 300px;
+    padding: 20px;
 }
+
 
 .shop-product-title{
     display: flex;
     padding: 0.2rem 0;
     gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .shop-product-desc {

@@ -23,8 +23,9 @@
 
 .product-mainImg {
     height: 74%;
-    width: 100%;
-    object-fit: cover;
+    width: 90%;
+    object-fit: scale-down;
+    padding: 1rem;
 }
 
 .product-altImgs {

@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route index element={<Home/>} />
           <Route path='/home' element={<Home/>} />
-          <Route path='/product' element={<ProductPage/>} />
+          <Route path='/product/:id' element={<ProductPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
