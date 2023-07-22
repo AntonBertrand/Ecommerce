@@ -1,6 +1,5 @@
 import React from 'react'
 import './product.css'
-import IMG1 from '../assets/airpodpromax.jpg'
 import IMG3 from '../assets/airpod3.jpg'
 import IMG4 from '../assets/airpod4.jpg'
 import {AiFillStar} from 'react-icons/ai'
@@ -9,10 +8,14 @@ import {BiNotepad} from 'react-icons/bi'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../features/productsSlice'
 
 
 
 const Product = () => {
+
+  const dispatch = useDispatch();
 
   let location = useLocation();
   const id = location.pathname.split("/")[2];
@@ -27,6 +30,11 @@ const Product = () => {
 
   function quantityDecrease() {
     setQuantity(quantity - 1);
+  }
+
+  function addProduct(item) {
+    console.log(item.product);
+    dispatch(addToCart(item.product));
   }
 
   useEffect(() => {
@@ -46,7 +54,6 @@ const Product = () => {
     }
 
     fetchProduct();
-    console.log(product)
 
   }, [])
   
@@ -95,7 +102,7 @@ const Product = () => {
 
           <div className="product-purchase">
             <button className="buy-now">Buy Now</button>
-            <button className="add-to-cart">Add To Cart</button>
+            <button className="add-to-cart" onClick={() => {addProduct(product)}}>Add To Cart</button>
           </div>
 
           <div className="product-delivery">
