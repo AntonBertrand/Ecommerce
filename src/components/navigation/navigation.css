@@ -58,6 +58,13 @@ nav {
     gap: 0.4rem;
 }
 
+.cart-counter {
+    background: rgba(4, 187, 74, 0.392);
+    width: 1.5rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
 
 @media only screen and (max-width: 800px) {
 

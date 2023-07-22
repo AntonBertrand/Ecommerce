@@ -1,14 +1,20 @@
 import './App.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Home from "../src/pages/Home.jsx"
 import ProductPage from "./pages/ProductPage.jsx"
+import { calculateTotals } from './features/productsSlice';
+import { useEffect } from 'react';
+import { useDispatch, useSelector  } from 'react-redux';
 
 function App() {
+
+  const dispatch = useDispatch();
+  const cartProducts = useSelector(state => state.products.cartProducts)
+
+  useEffect(() => {
+    dispatch(calculateTotals())
+  }, [cartProducts])
+
   return (
     <div className="App">
       <BrowserRouter>

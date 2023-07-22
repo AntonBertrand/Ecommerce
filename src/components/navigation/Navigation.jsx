@@ -3,8 +3,12 @@ import './navigation.css'
 import {AiOutlinePhone} from 'react-icons/ai';
 import {AiOutlineUser} from 'react-icons/ai';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
+import { useSelector } from 'react-redux';
 
 const Navigation = () => {
+
+    const quantity = useSelector(state => state.products.cartQuantity);
+
   return (
     <nav>
         <div className="nav-top">
@@ -35,6 +39,9 @@ const Navigation = () => {
                 <a href="" className='nav-bot-account'>Account</a>
             </div>
             <div className="cart-btn">
+                <div className="cart-counter">
+                    <p>{quantity}</p>
+                </div>
                 <AiOutlineShoppingCart/>
                 <a href="" className='nav-bot-cart'>Cart</a>
             </div>

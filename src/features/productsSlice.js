@@ -3,6 +3,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 const initialState = ({
     products: [],
     cartProducts: [],
+    cartTotal: 0,
+    cartQuantity: 0,
     status: null
 });
 
@@ -24,6 +26,20 @@ const productsSlice = createSlice({
         addToCart: (state, action) => {
             state.cartProducts.push(action.payload)
         },
+        calculateTotals: (state) => {
+
+            let quantity = 0;
+            let total = 0;
+
+            state.cartProducts.forEach((item) => {
+                quantity += item.amount;
+                total += item.amount * item.price;
+            });
+
+            state.cartQuantity = quantity;
+            state.cartTotal = total;
+        }
+        
     },
     extraReducers: {
         [productsFetch.pending]: (state, action) => {
@@ -41,6 +57,6 @@ const productsSlice = createSlice({
     }
 })
 
-export const {addToCart} = productsSlice.actions;
+export const {addToCart, calculateTotals} = productsSlice.actions;
 
 export default productsSlice.reducer;

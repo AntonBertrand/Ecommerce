@@ -36,6 +36,10 @@ const ProductsSchema = new Schema({
     rating: {
         type: Number,
         required: false
+    },
+    amount: {
+        type: Number,
+        required: true
     }
 }, {
         collection: 'products',
