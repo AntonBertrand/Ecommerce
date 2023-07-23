@@ -3,11 +3,14 @@ import { useEffect } from 'react';
 import './shop.css'
 import {AiFillStar} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../features/productsSlice';
 
 const Shop = () => {
 
     const navigate = useNavigate();
     const [products, setProducts] = useState();
+    const dispatch = useDispatch();
 
     useEffect(() => {
 
@@ -29,7 +32,12 @@ const Shop = () => {
     }, []);
 
     const navProduct = (id) => {
-        navigate(`/product/${id}`)
+        navigate(`/product/${id}`);
+    }
+
+    const addProduct = (e, product) => {
+        e.stopPropagation();
+        dispatch(addToCart(product))
     }
 
 
@@ -60,7 +68,7 @@ const Shop = () => {
                     <AiFillStar/>
                     <p>({product.rating})</p>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onClick={(e) => addProduct(e, product)}>Add To Cart</button>
                 </div>)
         })}
 
