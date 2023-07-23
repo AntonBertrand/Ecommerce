@@ -33,7 +33,8 @@ const Product = () => {
   }
 
   function addProduct(item) {
-    dispatch(addToCart(item.product));
+    const newItem = {...item.product, amount: quantity}
+    dispatch(addToCart(newItem));
   }
 
   useEffect(() => {

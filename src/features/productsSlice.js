@@ -24,7 +24,20 @@ const productsSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            state.cartProducts.push(action.payload)
+            let dupeFound = false;
+            const id = action.payload._id
+
+            state.cartProducts.forEach(item => {
+                if (item._id === id) {
+                    const quantity = action.payload.amount;
+                    item.amount = item.amount + quantity; 
+                    dupeFound = true;
+                }
+            })
+
+            if (!dupeFound) {
+                state.cartProducts.push(action.payload)
+            }
         },
         calculateTotals: (state) => {
 
