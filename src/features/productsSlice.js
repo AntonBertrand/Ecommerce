@@ -39,6 +39,36 @@ const productsSlice = createSlice({
                 state.cartProducts.push(action.payload)
             }
         },
+        removeFromCart: (state, action) => {
+            
+            const id = action.payload
+            state.cartProducts = state.cartProducts.filter((item) => item._id != id);
+
+        },
+        incrementAmount: (state, action) => {
+
+            const id = action.payload
+            
+            state.cartProducts.forEach(item => {
+                if (item._id === id) {
+                    item.amount += 1;
+                }
+            })
+
+
+        },
+        decrementAmount: (state, action) => {
+
+            const id = action.payload
+            
+            state.cartProducts.forEach(item => {
+                if (item._id === id) {
+                    item.amount -= 1;
+                }
+            })
+
+
+        },
         calculateTotals: (state) => {
 
             let quantity = 0;
@@ -70,6 +100,6 @@ const productsSlice = createSlice({
     }
 })
 
-export const {addToCart, calculateTotals} = productsSlice.actions;
+export const {addToCart, calculateTotals, incrementAmount, decrementAmount, removeFromCart} = productsSlice.actions;
 
 export default productsSlice.reducer;

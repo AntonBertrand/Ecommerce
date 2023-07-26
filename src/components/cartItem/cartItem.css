@@ -1,0 +1,36 @@
+.cart-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.cart-product-details img {
+    width: 10rem;
+}
+
+.cart-quantity {
+    margin: 0 1rem;
+}
+
+.cart-quantity-button {
+    display: flex;
+    align-items: center;
+}
+
+.cart-quantity-button button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cart-product-details {
+    display: flex;
+    gap: 2rem;
+}
+
+.cart-product-details * {
+    margin-bottom: 1rem;
+}

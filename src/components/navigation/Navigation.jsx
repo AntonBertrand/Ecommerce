@@ -3,9 +3,12 @@ import './navigation.css'
 import {AiOutlinePhone} from 'react-icons/ai';
 import {AiOutlineUser} from 'react-icons/ai';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Navigation = () => {
+
+    const Navigate = useNavigate();
 
     const quantity = useSelector(state => state.products.cartQuantity);
 
@@ -43,7 +46,7 @@ const Navigation = () => {
                     <p>{quantity}</p>
                 </div>
                 <AiOutlineShoppingCart/>
-                <a href="" className='nav-bot-cart'>Cart</a>
+                <a className='nav-bot-cart' onClick={() => Navigate('/cart')}>Cart</a>
             </div>
         </div>
     </nav>

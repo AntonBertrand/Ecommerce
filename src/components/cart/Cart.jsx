@@ -1,7 +1,16 @@
 import React from 'react'
 import './cart.css'
+import CartItem from '../cartItem/CartItem'
+
+import { useSelector  } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
+
+    const Navigate = useNavigate();
+
+    const products = useSelector(state => state.products.cartProducts);
+
   return (
     <div className='cart'>
         <div className="cart-header">
@@ -18,22 +27,16 @@ const Cart = () => {
             <p>Total</p>
         </div>
 
-        <div className="cart-product">
-            <div className="cart-product-details">
-                <img src="https://www.thesun.co.uk/wp-content/uploads/2022/07/fifa11-kaka-rooney-uk-boxart.jpg" alt="" />
-            </div>
-            <div className="cart-product-quantity">
-                <div className="cart-quantity-button">
-                <button>-</button>
-                <b className='cart-quantity'>2</b>
-                <button>+</button>
-                </div>
-            </div>
-            <b>£44</b>
-            <b>£88</b>
-        </div>
 
-        <button className='cart-checkout-button'>Proceed to Check Out</button>
+        {products.map((product) => {
+
+        return (
+            <CartItem product={product} />
+        )
+
+        })}
+
+        <button className='back-button' onClick={() => Navigate('/')}> ← Continue Shopping</button>
 
     </div>
   )
