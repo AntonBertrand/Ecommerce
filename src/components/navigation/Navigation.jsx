@@ -41,12 +41,12 @@ const Navigation = () => {
                 <AiOutlineUser/>
                 <a href="" className='nav-bot-account'>Account</a>
             </div>
-            <div className="cart-btn">
+            <div className="cart-btn" onClick={() => Navigate('/cart')}>
                 <div className="cart-counter">
                     <p>{quantity}</p>
                 </div>
                 <AiOutlineShoppingCart/>
-                <a className='nav-bot-cart' onClick={() => Navigate('/cart')}>Cart</a>
+                <a className='nav-bot-cart'>Cart</a>
             </div>
         </div>
     </nav>

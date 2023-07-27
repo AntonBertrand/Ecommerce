@@ -34,3 +34,16 @@
 .cart-product-details * {
     margin-bottom: 1rem;
 }
+
+.cart-product-details-right{
+    width: 10rem;
+}
+
+
+.cart-product-details-right p{
+    cursor: pointer;
+}
+
+.cart-product-details-right p:hover{
+    font-weight: 600;
+}

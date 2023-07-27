@@ -34,3 +34,7 @@
     cursor: pointer;
 }
 
+
+.back-button:hover {
+    font-weight: bold;
+}
