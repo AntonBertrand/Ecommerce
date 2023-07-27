@@ -63,6 +63,11 @@ const productsSlice = createSlice({
             
             state.cartProducts.forEach(item => {
                 if (item._id === id) {
+
+                    if (item.amount === 1) {
+                        state.cartProducts = state.cartProducts.filter((item) => item._id != id);
+                    }
+
                     item.amount -= 1;
                 }
             })
