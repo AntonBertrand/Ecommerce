@@ -7,6 +7,7 @@ import { calculateTotals } from './features/productsSlice';
 import { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
 import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/product/:id' element={<ProductPage/>} />
           <Route path='/cart' element={<ShoppingCart/>} />
           <Route path='/login' element={<Login/>}/>
+          <Route path='signup' element={<Signup/>} />
         </Routes>
       </BrowserRouter>
     </div>
