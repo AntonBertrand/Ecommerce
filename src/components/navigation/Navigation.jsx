@@ -5,6 +5,8 @@ import {AiOutlineUser} from 'react-icons/ai';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import LoginButton from '../LoginButton';
+import LogoutButton from '../LogoutButton';
 
 const Navigation = () => {
 
@@ -28,6 +30,9 @@ const Navigation = () => {
                 <p>English</p>
                 <p>Location</p>
             </div>
+
+            <LoginButton/>
+            <LogoutButton/>
         </div>
 
         <div className="nav-bot">
