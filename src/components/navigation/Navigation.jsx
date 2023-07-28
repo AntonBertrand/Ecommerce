@@ -31,8 +31,6 @@ const Navigation = () => {
                 <p>Location</p>
             </div>
 
-            <LoginButton/>
-            <LogoutButton/>
         </div>
 
         <div className="nav-bot">
@@ -43,8 +41,9 @@ const Navigation = () => {
                 <input type="text" placeholder='Search Product' />
             </form>
             <div className="account-btn">
-                <AiOutlineUser/>
-                <a href="" className='nav-bot-account'>Account</a>
+                <AiOutlineUser className='acc-icon'/>
+                <LoginButton/>
+                <LogoutButton/>
             </div>
             <div className="cart-btn" onClick={() => Navigate('/cart')}>
                 <div className="cart-counter">

@@ -46,6 +46,10 @@ nav {
     background: rgb(241, 241, 241);
 }
 
+.nav-bot a:hover {
+    font-weight: 600;
+}
+
 .account-btn {
     display: flex;
     align-items: center;
@@ -66,6 +70,15 @@ nav {
     text-align: center;
 }
 
+.auth-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-btn:hover {
+    font-weight: 600;
+}
 
 @media only screen and (max-width: 800px) {
 
@@ -94,6 +107,10 @@ nav {
     }
 
     .nav-bot-cart {
+        display: none;
+    }
+
+    .acc-icon {
         display: none;
     }
 
