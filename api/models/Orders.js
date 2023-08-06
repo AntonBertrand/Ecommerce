@@ -1,0 +1,38 @@
+import {mongoose, Schema} from 'mongoose';
+
+const OrdersSchema = new Schema({
+    user: {
+        type: String,
+        required: true
+    },
+    cart: {
+        type: [],
+        required: true
+    },
+    value: {
+        type: Number,
+        required: true
+    },
+    notes: {
+        type: String,
+        required: false
+    },
+    paymentType: {
+        type: String,
+        required: true
+    },
+    itemCount: {
+        type: Number,
+        required: true
+    },
+    paymentStatus: {
+        type: Boolean,
+        required: true
+    }
+
+}, {
+    collection: 'orders',
+    timestamp: true
+});
+
+export default mongoose.model('Orders', OrdersSchema);
