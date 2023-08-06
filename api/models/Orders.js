@@ -5,10 +5,13 @@ const OrdersSchema = new Schema({
         type: String,
         required: true
     },
-    cart: {
-        type: [],
-        required: true
-    },
+    cart: [{
+        itemId: {
+            type: ObjectID,
+            ref: 'product',
+            required: true
+         }
+    }],
     value: {
         type: Number,
         required: true

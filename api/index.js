@@ -1,4 +1,5 @@
 import productRoute from './routes/productRoute.js'
+import orderRoute from './routes/orderRoutes.js'
 import express from 'express'
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv';
@@ -34,3 +35,4 @@ connectDB().then(() => {
 
 
 app.use("/api/products", productRoute);
+app.use("/api/orders", orderRoute);
