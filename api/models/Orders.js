@@ -6,17 +6,17 @@ const OrdersSchema = new Schema({
         required: true
     },
     cart: [{
-        itemId: {
-            type: ObjectID,
-            ref: 'product',
-            required: true
-         }
+        itemId: {type: Schema.Types.ObjectId, ref: 'products', required: false},
+        title: {type: String,required: true},
+        image: { type: String,required: false},
+        price: {type: Number, required: true},
+        amount: {type: Number, required: true}
     }],
     value: {
         type: Number,
         required: true
     },
-    notes: {
+    shippingAddress: {
         type: String,
         required: false
     },
