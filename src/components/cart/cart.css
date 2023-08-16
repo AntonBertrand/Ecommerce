@@ -38,3 +38,15 @@
 .back-button:hover {
     font-weight: bold;
 }
+
+.checkout-button {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 2rem;
+    font-size: 16px;
+    cursor: pointer;
+}
