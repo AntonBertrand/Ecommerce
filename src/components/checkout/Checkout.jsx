@@ -2,9 +2,18 @@ import { useState } from 'react';
 import './checkout.css';
 import { useSelector } from 'react-redux';
 import { useAuth0 } from '@auth0/auth0-react';
+import OrderConfirm from '../orderConfirm/OrderConfirm';
+import {clearCart} from '../../features/productsSlice';
+import { useDispatch } from 'react-redux';
 
 
 const Checkout = () => {
+
+  const dispatch = useDispatch();
+
+  const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [orderId, setOrderId] = useState();
+
 
   const { user, isAuthenticated } = useAuth0();
 
@@ -20,8 +29,6 @@ const Checkout = () => {
   const cartProducts = useSelector(state => state.products.cartProducts);
 
   const handleClick = async () => {
-
-    console.log("Creating Order")
 
     const order = {
       "user": user.sub,
@@ -43,8 +50,9 @@ const Checkout = () => {
         }
       });
       const json = await response.json();
-      console.log(json);
-
+      setOrderId(json._id)
+      setOrderConfirmed(true);
+      dispatch(clearCart());
 
     } catch (err) {
       console.log(err);
@@ -53,8 +61,8 @@ const Checkout = () => {
   }
 
 
-  return (
-    <div className='checkout'>
+  return ( <>
+    { orderConfirmed ? <OrderConfirm orderId={orderId}/> : <div className='checkout'>
       <form action="" className='checkout__form'>
 
         <div className="checkout__form__shipping">
@@ -113,7 +121,7 @@ const Checkout = () => {
       </div>
 
 
-    </div>
+    </div>} </>
   )
 }
 

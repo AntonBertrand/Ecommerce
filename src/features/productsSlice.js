@@ -45,6 +45,9 @@ const productsSlice = createSlice({
             state.cartProducts = state.cartProducts.filter((item) => item._id != id);
 
         },
+        clearCart: (state) => {
+            state.cartProducts = [];
+        },
         incrementAmount: (state, action) => {
 
             const id = action.payload
@@ -105,6 +108,6 @@ const productsSlice = createSlice({
     }
 })
 
-export const {addToCart, calculateTotals, incrementAmount, decrementAmount, removeFromCart} = productsSlice.actions;
+export const {addToCart, calculateTotals, incrementAmount, decrementAmount, removeFromCart, clearCart} = productsSlice.actions;
 
 export default productsSlice.reducer;

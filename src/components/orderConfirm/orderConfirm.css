@@ -1,0 +1,37 @@
+.orderConfirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(235, 235, 235);
+    height: 100vh;
+}
+
+.orderConfirm__container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    gap: 1.5rem;
+    padding: 3rem;
+    text-align: center;
+    margin-top: -6rem;
+}
+
+.orderConfirm__homeBtn {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.orderConfirm__homeBtn:hover {
+    background: green;
+}
+
+.orderConfirm__icon {
+    margin: auto;
+    font-size: 3rem;
+    color: var(--primary-color);
+}
