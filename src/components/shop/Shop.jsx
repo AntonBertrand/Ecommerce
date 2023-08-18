@@ -5,6 +5,7 @@ import {AiFillStar} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/productsSlice';
+import { setLoading } from '../../features/productsSlice';
 
 const Shop = () => {
 
@@ -15,14 +16,21 @@ const Shop = () => {
     useEffect(() => {
 
         const fetchProducts = async () => {
+
+            dispatch(setLoading(true));
+
             try {
 
             const response = await fetch('http://localhost:4000/api/products');
             const json = await response.json();
 
-            if (response.ok) setProducts(json);
+            if (response.ok) {
+                dispatch(setLoading(false));
+                setProducts(json);
+            }
 
             } catch(err) {
+                dispatch(setLoading(false));
                 console.log(err.message);
             }
         }

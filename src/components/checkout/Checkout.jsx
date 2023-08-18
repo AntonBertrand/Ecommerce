@@ -5,6 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import OrderConfirm from '../orderConfirm/OrderConfirm';
 import {clearCart} from '../../features/productsSlice';
 import { useDispatch } from 'react-redux';
+import {setLoading} from '../../features/productsSlice';
 
 
 const Checkout = () => {
@@ -27,6 +28,7 @@ const Checkout = () => {
   const cartQuantity = useSelector(state => state.products.cartQuantity);
   const cartTotal = useSelector(state => state.products.cartTotal)
   const cartProducts = useSelector(state => state.products.cartProducts);
+  const loading = useSelector(state => state.products.isLoading);
 
   const handleClick = async () => {
 
@@ -42,6 +44,8 @@ const Checkout = () => {
 
     try {
 
+      dispatch(setLoading(true));
+
       const response = await fetch('http://localhost:4000/api/orders', {
         method: "POST",
         body: JSON.stringify(order),
@@ -53,8 +57,11 @@ const Checkout = () => {
       setOrderId(json._id)
       setOrderConfirmed(true);
       dispatch(clearCart());
+      dispatch(setLoading(false));
+
 
     } catch (err) {
+      dispatch(setLoading(false));
       console.log(err);
     }
 

@@ -7,11 +7,13 @@ import CheckoutPage from './pages/CheckoutPage';
 import { calculateTotals } from './features/productsSlice';
 import { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 
 function App() {
 
   const dispatch = useDispatch();
   const cartProducts = useSelector(state => state.products.cartProducts)
+  const loading = useSelector(state => state.products.isLoading)
 
   useEffect(() => {
     dispatch(calculateTotals())
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      {loading && <LoadingSpinner/>}
       <BrowserRouter>
         <Routes>
           <Route index element={<Home/>} />

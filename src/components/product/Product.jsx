@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../features/productsSlice'
+import { setLoading } from '../../features/productsSlice'
 
 
 
@@ -20,7 +21,6 @@ const Product = () => {
   let location = useLocation();
   const id = location.pathname.split("/")[2];
 
-  const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState();
   const [quantity, setQuantity] = useState(1);
 
@@ -39,7 +39,8 @@ const Product = () => {
 
   useEffect(() => {
     
-    setLoading(true);
+    dispatch(setLoading(true));
+    
 
     const fetchProduct = async () => {
 
@@ -49,7 +50,7 @@ const Product = () => {
 
       if (response.ok) setProduct(json);
 
-      setLoading(false);
+      dispatch(setLoading(false));
 
     }
 

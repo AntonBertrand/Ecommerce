@@ -5,7 +5,8 @@ const initialState = ({
     cartProducts: [],
     cartTotal: 0,
     cartQuantity: 0,
-    status: null
+    status: null,
+    isLoading: false
 });
 
 export const productsFetch = createAsyncThunk(
@@ -89,7 +90,15 @@ const productsSlice = createSlice({
 
             state.cartQuantity = quantity;
             state.cartTotal = total;
-        }
+        },
+        setLoading: (state, action) => {
+
+            if (action.payload) {
+                state.isLoading = true;
+            } else {
+                state.isLoading = false;
+            }           
+        },
         
     },
     extraReducers: {
@@ -108,6 +117,6 @@ const productsSlice = createSlice({
     }
 })
 
-export const {addToCart, calculateTotals, incrementAmount, decrementAmount, removeFromCart, clearCart} = productsSlice.actions;
+export const {addToCart, calculateTotals, incrementAmount, decrementAmount, removeFromCart, clearCart, setLoading} = productsSlice.actions;
 
 export default productsSlice.reducer;
