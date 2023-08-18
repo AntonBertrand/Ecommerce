@@ -104,3 +104,32 @@
 .checkout__summary__products__img {
     width: 100px;
 }
+
+
+@media screen and (max-width: 800px) {
+    .checkout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .checkout__form {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .checkout__form__shipping {
+        margin: 0;
+    }
+
+    .checkout__form__payment {
+        margin: 0;
+    }
+
+    .checkout__summary {
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+}
