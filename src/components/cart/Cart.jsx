@@ -10,12 +10,13 @@ const Cart = () => {
     const Navigate = useNavigate();
 
     const products = useSelector(state => state.products.cartProducts);
+    const quantity = useSelector(state => state.products.cartQuantity);
 
   return (
     <div className='cart'>
         <div className="cart-header">
             <h1>Shopping Cart</h1>
-            <h3>3 Items</h3>
+            <h3>{quantity} Items</h3>
         </div>
 
         <div className="cart-divider"></div>
