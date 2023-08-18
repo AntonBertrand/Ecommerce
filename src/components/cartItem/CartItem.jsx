@@ -28,7 +28,7 @@ const CartItem = (cartItem) => {
         <button onClick={() => dispatch(incrementAmount(product._id))}>+</button>
         </div>
     </div>
-    <b>£{product.price}</b>
+    <b className='price'>£{product.price}</b>
     <b>£{(product.price * product.amount).toFixed(2)}</b>
     </div>
 
