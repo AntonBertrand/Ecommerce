@@ -14,7 +14,7 @@ export const productsFetch = createAsyncThunk(
     "products/productsFetch",
     // Payload Creator
     async ( ) => {
-            const response = await fetch('http://localhost:4000/api/products');
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}products`);
             const json = await response.json();
             return json;
     }

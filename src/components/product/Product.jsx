@@ -44,7 +44,7 @@ const Product = () => {
 
     const fetchProduct = async () => {
 
-      const response = await fetch(`http://localhost:4000/api/products/${id}`)
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}products/${id}`)
 
       const json = await response.json();
 

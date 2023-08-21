@@ -114,4 +114,9 @@ nav {
         display: none;
     }
 
+    
+    .nav-bot input {
+        display: none;
+    }
+
 }
