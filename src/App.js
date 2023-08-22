@@ -8,6 +8,7 @@ import { calculateTotals } from './features/productsSlice';
 import { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/product/:id' element={<ProductPage/>} />
           <Route path='/cart' element={<ShoppingCart/>} />
           <Route path='/checkout' element={<CheckoutPage/>}/>
+          <Route path='/Profile' element={<Profile/>}/>
         </Routes>
       </BrowserRouter>
     </div>

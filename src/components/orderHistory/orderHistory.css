@@ -1,0 +1,51 @@
+.orderHistory {
+margin: 2rem;
+overflow-y: hidden;
+}
+
+.orderHistory_table {
+    margin-top: 2rem;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 0.2rem;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.orderHistory_table tHead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.orderHistory_table th {
+    padding: 0.3rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.orderHistory_table td {
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid rgb(141, 141, 141);
+}
+
+@media screen and (max-width: 800px) {
+    .orderHistory_table tHead {
+        font-size: 14px;
+    }
+
+    .orderHistory_table tr {
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .orderHistory_table tHead {
+        font-size: 12px;
+    }
+
+    .orderHistory_table tr {
+        font-size: 10px;
+    }
+}
