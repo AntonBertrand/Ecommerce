@@ -3,7 +3,7 @@ import './navigation.css'
 import {AiOutlinePhone} from 'react-icons/ai';
 import {AiOutlineUser} from 'react-icons/ai';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginButton from '../LoginButton';
 import LogoutButton from '../LogoutButton';
@@ -41,7 +41,6 @@ const Navigation = () => {
                 <input type="text" placeholder='Search Product' />
             </form>
             <div className="account-btn">
-                <AiOutlineUser className='acc-icon'/>
                 <LoginButton/>
                 <LogoutButton/>
             </div>
