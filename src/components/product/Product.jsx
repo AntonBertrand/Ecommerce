@@ -9,8 +9,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../features/productsSlice'
-import { setLoading } from '../../features/productsSlice'
+import { addToCart } from '../../features/productsSlice.tsx'
+import { setLoading } from '../../features/productsSlice.tsx'
 
 
 

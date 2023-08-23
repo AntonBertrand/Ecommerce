@@ -4,7 +4,7 @@ import Home from "../src/pages/Home.jsx"
 import ProductPage from "./pages/ProductPage.jsx"
 import ShoppingCart from './pages/ShoppingCart';
 import CheckoutPage from './pages/CheckoutPage';
-import { calculateTotals } from './features/productsSlice';
+import { calculateTotals } from './features/productsSlice.tsx';
 import { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';

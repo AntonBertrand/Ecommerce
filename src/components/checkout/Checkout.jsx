@@ -3,9 +3,9 @@ import './checkout.css';
 import { useSelector } from 'react-redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import OrderConfirm from '../orderConfirm/OrderConfirm';
-import {clearCart} from '../../features/productsSlice';
+import {clearCart} from '../../features/productsSlice.tsx';
 import { useDispatch } from 'react-redux';
-import {setLoading} from '../../features/productsSlice';
+import {setLoading} from '../../features/productsSlice.tsx';
 
 
 const Checkout = () => {

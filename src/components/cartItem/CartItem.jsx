@@ -1,9 +1,9 @@
 import React from 'react'
 import './cartItem.css'
 import { useDispatch } from 'react-redux';
-import  {incrementAmount}  from '../../features/productsSlice'
-import { decrementAmount } from '../../features/productsSlice';
-import { removeFromCart } from '../../features/productsSlice';
+import  {incrementAmount}  from '../../features/productsSlice.tsx'
+import { decrementAmount } from '../../features/productsSlice.tsx';
+import { removeFromCart } from '../../features/productsSlice.tsx';
 
 
 const CartItem = (cartItem) => {

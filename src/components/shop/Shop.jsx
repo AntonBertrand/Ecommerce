@@ -4,8 +4,8 @@ import './shop.css'
 import {AiFillStar} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../features/productsSlice';
-import { setLoading } from '../../features/productsSlice';
+import { addToCart } from '../../features/productsSlice.tsx';
+import { setLoading } from '../../features/productsSlice.tsx';
 
 const Shop = () => {
 

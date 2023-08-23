@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './orderHistory.css';
 import { useDispatch } from 'react-redux'
-import { setLoading } from '../../features/productsSlice'
+import { setLoading } from '../../features/productsSlice.tsx'
 import { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react';
 
