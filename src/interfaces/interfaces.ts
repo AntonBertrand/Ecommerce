@@ -19,3 +19,10 @@ export interface Iproduct {
     status: string,
     isLoading: boolean
   }
+
+  export interface Iorder {
+    _id: string,
+    paymentStatus: string,
+    itemCount: number,
+    value: number
+  }
