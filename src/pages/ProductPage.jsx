@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from '../components/navigation/Navigation.jsx'
+import Navigation from '../components/navigation/Navigation'
 import Product from '../components/product/Product.jsx'
 
 const ProductPage = () => {

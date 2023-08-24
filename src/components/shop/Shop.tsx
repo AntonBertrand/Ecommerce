@@ -6,23 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/productsSlice";
 import { setLoading } from "../../features/productsSlice";
-
-type product = {
-  _id: string;
-  title: string;
-  desc: string;
-  features: string;
-  image: string;
-  image3: string;
-  image4: string;
-  price: number;
-  rating: number;
-  amount: number;
-};
+import { Iproduct } from "../../interfaces/interfaces";
 
 const Shop = () => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState<product[]>();
+  const [products, setProducts] = useState<Iproduct[]>();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -54,7 +42,7 @@ const Shop = () => {
 
   const addProduct = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    product: product
+    product: Iproduct
   ) => {
     e.stopPropagation();
     dispatch(addToCart(product));
@@ -65,7 +53,7 @@ const Shop = () => {
       <h2>Headphones For You!</h2>
       <div className="shop-grid">
         {products &&
-          products.map((product: product, i: number) => {
+          products.map((product: Iproduct, i: number) => {
             return (
               <div
                 className="shop-card"
