@@ -39,7 +39,7 @@ const Cart: React.FC = () => {
       </div>
 
       {products.map((product: Iproduct) => {
-        return <CartItem product={product} />;
+        return <CartItem product={product} key={product._id} />;
       })}
 
       <button className="back-button" onClick={() => Navigate("/")}>

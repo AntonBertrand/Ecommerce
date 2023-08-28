@@ -135,6 +135,7 @@ const Checkout: React.FC = () => {
                 {cartProducts.map((product) => {
                   return (
                     <img
+                      key={product._id}
                       className="checkout__summary__products__img"
                       src={product.image}
                       alt={product.title}
