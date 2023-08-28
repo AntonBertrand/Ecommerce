@@ -12,7 +12,7 @@ export interface Iproduct {
   };
 
   export interface Istate {
-    products: Iproduct,
+    products: Iproduct[],
     cartProducts: Iproduct[],
     cartTotal: number,
     cartQuantity: number,

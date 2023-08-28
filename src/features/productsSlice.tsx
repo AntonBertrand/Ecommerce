@@ -1,29 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { Iproduct } from "../interfaces/interfaces";
+import { Istate } from "../interfaces/interfaces";
 
-interface productState {
-  products: string[];
-  cartProducts: ICartProducts[];
-  cartTotal: number;
-  cartQuantity: number;
-  status: string;
-  isLoading: boolean;
-}
-
-interface ICartProducts {
-  _id: number;
-  title: string;
-  desc: string;
-  features: string;
-  image: string;
-  image3: string;
-  image4: string;
-  rating: number;
-  price: number;
-  amount: number;
-}
-
-const initialState: productState = {
+const initialState: Istate = {
   products: [],
   cartProducts: [],
   cartTotal: 0,
