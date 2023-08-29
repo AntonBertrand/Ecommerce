@@ -7,6 +7,7 @@ import { clearCart } from "../../features/productsSlice";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../features/productsSlice";
 import { useAppSelector } from "../../features/hooks";
+import { useNavigate } from "react-router-dom";
 
 const Checkout: React.FC = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,8 @@ const Checkout: React.FC = () => {
   const cartTotal = useAppSelector((state) => state.products.cartTotal);
   const cartProducts = useAppSelector((state) => state.products.cartProducts);
   const loading = useAppSelector((state) => state.products.isLoading);
+
+  const navigate = useNavigate();
 
   const handleClick = async () => {
     const order = {
@@ -128,7 +131,10 @@ const Checkout: React.FC = () => {
           <div className="checkout__summary">
             <div className="checkout__summary__details">
               <h2>Checkout Summary</h2>
-              <span className="checkout__summary__modify">
+              <span
+                className="checkout__summary__modify"
+                onClick={() => navigate("/cart")}
+              >
                 Modify Shopping Bag
               </span>
               <div className="checkout__summary__products">

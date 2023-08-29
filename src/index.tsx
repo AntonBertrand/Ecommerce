@@ -6,9 +6,13 @@ import { Provider } from "react-redux";
 import { productsFetch } from "./features/productsSlice";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { store } from "./features/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+
+let persistor = persistStore(store);
 
 store.dispatch(productsFetch());
 
@@ -25,9 +29,11 @@ root.render(
         redirect_uri: window.location.origin,
       }}
     >
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <PersistGate persistor={persistor}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </PersistGate>
     </Auth0Provider>
   </React.StrictMode>
 );
