@@ -33,7 +33,8 @@ const Checkout: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user || cartQuantity < 1) {
+    if (!user) {
+      console.log("BACK");
       navigate("/");
     }
   });
