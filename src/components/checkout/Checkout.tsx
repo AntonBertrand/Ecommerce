@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../../features/productsSlice";
 import { useAppSelector } from "../../features/hooks";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Checkout: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,28 @@ const Checkout: React.FC = () => {
   const loading = useAppSelector((state) => state.products.isLoading);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user || cartQuantity < 1) {
+      navigate("/");
+    }
+  });
+
+  const validateForm = () => {
+    if (
+      !shippingAddress1 ||
+      !shippingAddress2 ||
+      !firstName ||
+      !lastName ||
+      !country
+    ) {
+      console.log("Shipping address empty!");
+      return false;
+    }
+
+    console.log("Passed validation");
+    handleClick();
+  };
 
   const handleClick = async () => {
     const order = {
@@ -168,7 +191,7 @@ const Checkout: React.FC = () => {
             </div>
             <button
               className="checkout__summary_submit"
-              onClick={() => handleClick()}
+              onClick={() => validateForm()}
             >
               Confirm Order
             </button>
