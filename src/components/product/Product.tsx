@@ -14,8 +14,7 @@ import { Iproduct } from "../../interfaces/interfaces";
 const Product = () => {
   const dispatch = useDispatch();
 
-  const IMG3 = require("../assets/airpod3.jpg");
-  const IMG4 = require("../assets/airpod4.jpg");
+  const PlaceHolderIMG = require("../assets/NoImg.png");
 
   let location = useLocation();
   const id = location.pathname.split("/")[2];
@@ -61,24 +60,27 @@ const Product = () => {
       ) : (
         <>
           <div className="breadcrumbs">
-            Electronics / Audio / Headphones / <b>Airpods Max</b>
+            Electronics / Audio / Headphones / <b>{product.title}</b>
           </div>
           <div className="product-container">
             <div className="product-left">
               <img src={product.image} className="product-mainImg" />
               <div className="product-altImgs">
-                <img src={IMG3} className="product-altImg" />
-                <img src={IMG3} className="product-altImg" />
-                <img src={IMG4} className="product-altImg" />
+                <img
+                  src={product.image3 ? product.image3 : PlaceHolderIMG}
+                  className="product-altImg"
+                />
+                <img
+                  src={product.image4 ? product.image4 : PlaceHolderIMG}
+                  className="product-altImg"
+                />
+                <img src={PlaceHolderIMG} className="product-altImg" />
               </div>
             </div>
             <div className="product-right">
               <div className="product-details">
                 <h1 className="product-title">{product.title}</h1>
-                <p>
-                  A perfect balance of exhilirating high-fidelity audio and the
-                  effortless magic of Airpods.
-                </p>
+                <p>{product.desc}</p>
                 <div className="product-rating">
                   <AiFillStar />
                   <AiFillStar />
