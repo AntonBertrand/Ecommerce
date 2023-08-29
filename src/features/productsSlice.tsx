@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { Iproduct } from "../interfaces/interfaces";
 import { Istate } from "../interfaces/interfaces";
 
 const initialState: Istate = {
@@ -11,17 +10,6 @@ const initialState: Istate = {
   status: "",
   isLoading: false,
 };
-
-export const productsFetch = createAsyncThunk(
-  // Action type (name of slice/action creator)
-  "products/productsFetch",
-  // Payload Creator
-  async () => {
-    const response = await fetch(`${process.env.REACT_APP_BASE_URL}products`);
-    const json = await response.json();
-    return json;
-  }
-);
 
 const productsSlice = createSlice({
   name: "products",
@@ -92,20 +80,6 @@ const productsSlice = createSlice({
       } else {
         state.isLoading = false;
       }
-    },
-  },
-  extraReducers: {
-    [productsFetch.pending.toString()]: (state, action) => {
-      state.status = "pending";
-    },
-
-    [productsFetch.fulfilled.toString()]: (state, action) => {
-      state.status = "success";
-      state.products = action.payload;
-    },
-
-    [productsFetch.rejected.toString()]: (state, action) => {
-      state.status = "rejected";
     },
   },
 });

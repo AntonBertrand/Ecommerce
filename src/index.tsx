@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { productsFetch } from "./features/productsSlice";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { store } from "./features/store";
 import { PersistGate } from "redux-persist/integration/react";
@@ -13,8 +12,6 @@ const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 let persistor = persistStore(store);
-
-store.dispatch(productsFetch());
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
